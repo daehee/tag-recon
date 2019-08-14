@@ -1,32 +1,21 @@
 const direct = require('./lib/direct');
 const builtwith = require('./lib/builtwith');
 
-module.exports = async (domain, callback = () => {}) => {
+module.exports = async (domain) => {
   try {
     // Execute direct scraping
-    const directResults = await direct(domain, (err, results) => {
-      if(err) {
-        throw new Error(err);
-      }
-      return err ? null : results;
-    });
+    const directResults = await direct(domain);
 
     // Execute builtwith
-    // const builtwithResults = await builtwith(domain, (err, results) => {
-    //   if(err) {
-    //     reject(err);
-    //   }
-    //   return err ? null : results;
-    // });
+    const builtwithResults = await builtwith(domain);
 
     // Build master object
-    const results = {};
+    const results = { direct: directResults, builtwith: builtwithResults};
 
     // Return master object
-    callback(null, directResults);
-    return await directResults;
+    return results;
 
   } catch(error) {
-    callback(error);
+    console.log(error);
   }
 };
