@@ -27,7 +27,7 @@ BUILTWITH_KEY=XXX
 Run:
 `node example/index.js`
 
-See [example JSON output](../blob/master/example/output.json).
+See [example JSON output](../master/example/output.json).
 
 ## Credits
 
