@@ -2,6 +2,13 @@ require('dotenv').config();
 
 const direct = require('./lib/direct');
 const builtwith = require('./lib/builtwith');
+const spyonweb = require('./lib/spyonweb');
+
+const options = {
+  keys: {
+    spyonweb: process.env.SPYONWEB_KEY,
+  },
+};
 
 module.exports = async (domain) => {
   try {
@@ -11,10 +18,17 @@ module.exports = async (domain) => {
     // Execute builtwith
     const builtwithResults = await builtwith(domain);
 
-    // Build master object
-    const results = { direct: directResults, builtwith: builtwithResults};
+    // Execute spyonweb using collected codes
+    // TODO Build object of analytics and adsense codes from both direct and builtwith
+    const spyonwebResults = await spyonweb(directResults, options);
 
-    // Return master object
+    // Build master object
+    const results = {
+      direct: directResults,
+      builtwith: builtwithResults,
+      spyonweb: spyonwebResults,
+    };
+
     return results;
 
   } catch(error) {
