@@ -1,2 +1,5 @@
 node_modules
 example
+.env
+test
+TODO.md
