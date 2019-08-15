@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const direct = require('./lib/direct');
 const builtwith = require('./lib/builtwith');
 
