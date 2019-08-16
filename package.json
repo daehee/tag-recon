@@ -7,7 +7,7 @@
   "scripts": {
     "pretest": "npm run lint",
     "lint": "eslint . --fix",
-    "test": "ava --verbose"
+    "test": "jest --coverage"
   },
   "keywords": [
     "scrape",
@@ -24,7 +24,6 @@
   "license": "MIT",
   "dependencies": {
     "axios": "^0.19.0",
-    "debug": "^4.1.1",
     "dotenv": "^8.0.0",
     "lodash": "^4.17.15",
     "psl": "^1.3.0",
@@ -34,7 +33,8 @@
     "extends": "eslint:recommended",
     "env": {
       "es6": true,
-      "node": true
+      "node": true,
+      "jest": true
     },
     "parserOptions": {
       "ecmaVersion": 9,
@@ -45,8 +45,12 @@
     }
   },
   "devDependencies": {
+    "debug": "^4.1.1",
     "eslint": "^6.1.0",
+    "eslint-plugin-jest": "^22.15.1",
     "eslint-plugin-node": "^9.1.0",
+    "jest": "^24.8.0",
+    "nock": "^10.0.6",
     "xo": "^0.24.0"
   },
   "prettier": {
@@ -66,5 +70,16 @@
         38
       ]
     }
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "verbose": true,
+    "rootDir": "lib",
+    "testPathIgnorePatterns": [
+      "<rootDir>/__tests__/stubs/"
+    ],
+    "coveragePathIgnorePatterns": [
+      "<rootDir>/__tests__/stubs/"
+    ]
   }
 }
