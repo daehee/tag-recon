@@ -1,7 +1,8 @@
 {
   "name": "tag-recon",
   "version": "0.1.0",
-  "description": "OSINT website analytics and advertising tracking codes for discovering connections",
+  "description": "OSINT a domain's tracking code footprint to discover hidden connections",
+  "repository": "daehee/tag-recon",
   "main": "index.js",
   "scripts": {
     "pretest": "npm run lint",
