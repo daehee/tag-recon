@@ -41,7 +41,8 @@
       "sourceType": "module"
     },
     "rules": {
-      "semi": "error"
+      "semi": "error",
+      "no-unused-vars" : ["error", { "varsIgnorePattern": "debug" }]
     }
   },
   "devDependencies": {
