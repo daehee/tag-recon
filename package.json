@@ -1,6 +1,6 @@
 {
   "name": "tag-recon",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "OSINT a domain's tracking code footprint to discover hidden connections",
   "repository": "daehee/tag-recon",
   "main": "lib/index.js",
