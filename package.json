@@ -3,7 +3,7 @@
   "version": "0.1.1",
   "description": "OSINT a domain's tracking code footprint to discover hidden connections",
   "repository": "daehee/tag-recon",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "pretest": "npm run lint",
     "lint": "eslint . --fix",
