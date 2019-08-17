@@ -1,4 +1,4 @@
-const tagRecon = require('../index.js');
+const tagRecon = require('../lib/index.js');
 
 (async () => {
   try {
